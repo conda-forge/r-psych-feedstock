@@ -16,9 +16,7 @@ source:
 
 build:
   number: 0
-  # r-mnormt is also missing from win64
-  skip: true  # [win]
-
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -30,7 +28,6 @@ requirements:
     - r-lattice
     - r-mnormt
     - r-nlme
-
   run:
     - r-base
     - r-foreign
@@ -46,8 +43,9 @@ test:
 about:
   home: http://personality-project.org/r/psych http://personality-project.org/r/psych-manual.pdf
   license: GPL (>= 2)
-  summary: A general purpose toolbox for personality, psychometric theory and experimental psychology.   Functions
-    are primarily for multivariate analysis and scale construction using factor analysis,
+  summary: |
+    A general purpose toolbox for personality, psychometric theory and experimental psychology.
+    Functions are primarily for multivariate analysis and scale construction using factor analysis,
     principal component analysis, cluster analysis and reliability analysis, although
     others provide basic descriptive statistics. Item Response Theory is done using  factor
     analysis of tetrachoric and polychoric correlations. Functions for analyzing data
