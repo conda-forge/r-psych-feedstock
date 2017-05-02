@@ -16,8 +16,7 @@ source:
 
 build:
   number: 0
-  # r-mnormt is also missing from win64
-  skip: true  # [win]
+  skip: true  # [win32]
 
   rpaths:
     - lib/R/lib/
