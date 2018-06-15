@@ -14,14 +14,16 @@ Summary: A general purpose toolbox for personality, psychometric theory and expe
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-psych-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-psych-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-psych-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-psych-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-psych-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-psych-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-psych-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-psych-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-psych-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-psych-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-psych-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-psych-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-psych/badges/version.svg)](https://anaconda.org/conda-forge/r-psych)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-psych/badges/downloads.svg)](https://anaconda.org/conda-forge/r-psych)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--psych-green.svg)](https://anaconda.org/conda-forge/r-psych) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-psych.svg)](https://anaconda.org/conda-forge/r-psych) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-psych.svg)](https://anaconda.org/conda-forge/r-psych) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-psych.svg)](https://anaconda.org/conda-forge/r-psych) |
 
 Installing r-psych
 ==================
