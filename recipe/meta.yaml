@@ -1,5 +1,4 @@
-{% set version = "1.8.4" %}
-
+{% set version = '1.8.4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,26 +9,27 @@ package:
 source:
   fn: psych_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/psych_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/psych/psych_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/psych_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/psych/psych_{{ version }}.tar.gz
   sha256: eea18e479bf603e148d61431218f9a141f66f4ca1db5fe83d4c1f27c984dfbcf
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-foreign
     - r-lattice
     - r-mnormt
     - r-nlme
-
   run:
     - r-base
     - r-foreign
@@ -39,11 +39,11 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('psych')"  # [not win]
+    - $R -e "library('psych')"           # [not win]
     - "\"%R%\" -e \"library('psych')\""  # [win]
 
 about:
-  home: http://personality-project.org/r/psych http://personality-project.org/r/psych-manual.pdf
+  home: https://personality-project.org/r/psych https://personality-project.org/r/psych-manual.pdf
   license: GPL (>= 2)
   summary: A general purpose toolbox for personality, psychometric theory and experimental psychology.   Functions
     are primarily for multivariate analysis and scale construction using factor analysis,
@@ -56,11 +56,17 @@ about:
     structural equation modeling.  Graphical displays of path diagrams, factor analysis
     and structural equation models are created using basic graphics. Some of the functions
     are written to support a book on psychometric theory as well as publications in
-    personality research. For more information, see the <http://personality-project.org/r>
+    personality research. For more information, see the <https://personality-project.org/r>
     web page.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
