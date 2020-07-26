@@ -1,4 +1,4 @@
-{% set version = "1.9.12.31" %}
+{% set version = "2.0.7" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/psych_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/psych/psych_{{ version }}.tar.gz
-  sha256: 25e71dbe0b0d8211e7a9c8439c1c205a25fd571a0f95a89b8425b87b95b9290a
+  sha256: 6ca513e90cc2ef7ac05237e644d5f11c29590f9343c639958ffb659ba637e28f
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -44,22 +44,13 @@ test:
 about:
   home: https://personality-project.org/r/psych https://personality-project.org/r/psych-manual.pdf
   license: GPL-2
-  summary: A general purpose toolbox for personality, psychometric theory and experimental psychology.   Functions
-    are primarily for multivariate analysis and scale construction using factor analysis,
-    principal component analysis, cluster analysis and reliability analysis, although
-    others provide basic descriptive statistics. Item Response Theory is done using  factor
-    analysis of tetrachoric and polychoric correlations. Functions for analyzing data
-    at multiple levels include within and between group statistics, including correlations
-    and factor analysis.   Functions for simulating and testing particular item and
-    test structures are included. Several functions  serve as a useful front end for
-    structural equation modeling.  Graphical displays of path diagrams, factor analysis
-    and structural equation models are created using basic graphics. Some of the functions
-    are written to support a book on psychometric theory as well as publications in
-    personality research. For more information, see the <https://personality-project.org/r>
-    web page.
+  summary: A general purpose toolbox for personality, psychometric theory and experimental psychology.   Functions are primarily for multivariate analysis and scale construction using factor analysis, principal component analysis, cluster analysis and reliability analysis, although others provide basic descriptive statistics.
+    Item Response Theory is done using  factor analysis of tetrachoric and polychoric correlations. Functions for analyzing data at multiple levels include within and between group statistics, including correlations and factor analysis.   Functions for simulating and testing particular item and test structures are included.
+    Several functions  serve as a useful front end for structural equation modeling.  Graphical displays of path diagrams, factor analysis and structural equation models are created using basic graphics. Some of the functions are written to support a book on psychometric theory as well as publications in personality research.
+    For more information, see the <https://personality-project.org/r> web page.
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
