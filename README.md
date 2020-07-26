@@ -3,7 +3,7 @@ About r-psych
 
 Home: https://personality-project.org/r/psych https://personality-project.org/r/psych-manual.pdf
 
-Package license: GPL-2
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD-3-Clause
 
