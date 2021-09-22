@@ -1,4 +1,4 @@
-{% set version = "2.1.6" %}
+{% set version = "2.1.9" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/psych_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/psych/psych_{{ version }}.tar.gz
-  sha256: bd3b1676d15c7ff489ec8f5655e6712138c8a8220098cb4ec9098608b3e3bc66
+  sha256: 1475e03a17f1ae6837834f01c2472aed68887c89d90a84a3e09a532ce218500c
 
 build:
   merge_build_host: true  # [win]
