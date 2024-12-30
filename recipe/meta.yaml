@@ -21,13 +21,16 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-gparotation
     - r-lattice
     - r-mnormt
     - r-nlme
   run:
     - r-base
+    - r-gparotation
     - r-lattice
     - r-mnormt
     - r-nlme
