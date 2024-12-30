@@ -1,4 +1,4 @@
-{% set version = "2.4.3" %}
+{% set version = "2.4.12" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/psych_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/psych/psych_{{ version }}.tar.gz
-  sha256: 718d82cacc70be0b4eb1b4a4973b38ee44494bb854b25081b07692307c3a8445
+  sha256: 389f18e8dd8bfb8c9c980919fe1b1a41ef89c51ec5385a24615b29ee5b49e0fb
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -21,13 +21,16 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-gparotation
     - r-lattice
     - r-mnormt
     - r-nlme
   run:
     - r-base
+    - r-gparotation
     - r-lattice
     - r-mnormt
     - r-nlme
