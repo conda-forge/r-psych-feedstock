@@ -1,4 +1,4 @@
-{% set version = "2.6.5" %}
+{% set version = "2.6.9" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/psych_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/psych/psych_{{ version }}.tar.gz
-  sha256: 9a70ebada6e49e2d4c2d1547133bc2d3ec904528dfd4b16239df8942c2eb2899
+  sha256: 81cfacc5254b139323275a35cf0238dbefd23783b6deb3f4e01a40b0f2b2147f
 
 build:
   number: 0
